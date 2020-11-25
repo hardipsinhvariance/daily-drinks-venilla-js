@@ -1,0 +1,47 @@
+.customTable {
+    width: 100%;
+    table-layout: fixed;
+}
+.customTable .row-id-header {
+    max-width: 10%;
+    width: 10%;
+}
+
+.customTable .row-name-header {
+    max-width: 30%;
+    width: 30%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.customTable .row-price-header {
+    max-width: 10%;
+    width: 10%;
+}
+.customTable .row-notes-header {
+    max-width: 40%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.customTable .row-actions-header {
+    width: 10%;
+    max-width: 10%;
+}
+
+.fa,.add-new {
+	cursor:pointer
+}
+
+.fade2 {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all .2s linear;
+    display: block !important;
+}
+
+.fade2.show {
+    opacity: 1;
+    transform: scale(1);
+}
