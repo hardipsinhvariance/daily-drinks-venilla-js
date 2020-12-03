@@ -1,4 +1,4 @@
-As defined in the requirement, the app is developed with Jquery and Bootstrap. It has the following features:
+As defined in the requirement, the app is developed with Jquery. It has the following features:
 
 1) CRUD (Create, Read, Update and Delete) operations of Daily Drinks Demo application with an in-memory array.
 2) Set the maximum length of each text input including notes.
