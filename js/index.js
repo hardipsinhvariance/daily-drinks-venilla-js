@@ -9,7 +9,7 @@
 	$(document.body).on("click", ".faEdit", function (e) {
 		let recordId = $(this).data("id");
 		if (recordId) {
-			$("#recordModal .modal-title").text("Edit Record");
+			$("#recordModal .rmcTitle").text("Edit Record");
 			$("#btnSubmit").text("Update");
 			for (let i in records) {
 				let record = records[i];
@@ -20,16 +20,16 @@
 					$("#recordId").val(record.id);
 				}
 			}
-			$('#recordModal').modal('show');
+			showModal("recordModal");
 		}
 
 	});
 
 	$("#spanAddNew").click(function () {
 		$("#frmAddNew").trigger("reset");
-		$("#recordModal .modal-title").text("Add New Record");
+		$("#recordModal .rmcTitle").text("Add New Record");
 		$("#recordId").val("");
-		$('#recordModal').modal('show');
+		showModal("recordModal");
 	});
 	$(document.body).on("click", ".faDelete", function (e) {
 		let recordId = $(this).data("id");
@@ -43,8 +43,7 @@
 	//Scripts for modal
 
 	$(".modal #btnCancel").click(function () {
-		$('#recordModal').modal('hide');
-
+		closeModal("recordModal");
 	});
 
 	$(document.body).on("click", "#btnSubmit", addRecord);
@@ -74,7 +73,7 @@
 				});
 			}
 			listRecords();
-			$('#recordModal').modal('hide');
+			closeModal("recordModal");
 		}
 	}
 	
@@ -131,7 +130,13 @@
 		}
 
 	}
+	function closeModal(id) {
+		$("#" + id +" .close-modal").trigger("click");
+	}
 
+	function showModal(id) {
+		$("#" + id).modal();
+	}
 	function deleteRecord(recordId) {
 		//Returns new array that does not contain specified recordId and store it to the global array.
 		records = records.filter(function (obj) {
