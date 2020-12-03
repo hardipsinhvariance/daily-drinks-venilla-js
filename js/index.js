@@ -27,6 +27,7 @@
 
 	$("#spanAddNew").click(function () {
 		$("#frmAddNew").trigger("reset");
+		$("#btnSubmit").text("Add");
 		$("#recordModal .rmcTitle").text("Add New Record");
 		$("#recordId").val("");
 		showModal("recordModal");
